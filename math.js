@@ -8,10 +8,10 @@ const handleURLCals = (req,res) =>
     const {method,x,y}=req.query;
 
     //validate these fools with the valid operations
-    const validOpers=["Add","Subtract","Multiply","Divide"];
+    const validOpers=["add","subtract","multiply","divide"];
 
     //make sure that its in the operation in the array 
-    if(validOpers.includes(method.toUpperCase))
+    if(validOpers.includes(method.toLowerCase()))
     {
         //validate that x is a number
         if(isNaN(x))
