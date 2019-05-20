@@ -1,5 +1,5 @@
 //validate these fools with the valid operations
-const validOpers=["Add","Subtract","Multiply","Divide"];
+const validOpers=["add","subtract","multiply","divide"];
 
 // request and response to get the info to make the caluations
 const handleURLCals = (req,res) => 
@@ -13,7 +13,7 @@ const handleURLCals = (req,res) =>
 console.log(validOpers);
 
     //make sure that its in the operation in the array 
-    if (validOpers.includes(method.toUpperCase())) 
+    if (validOpers.includes(method.toLowerCase())) 
     {
         //validate that x is a number
         if(isNaN(x))
@@ -44,21 +44,21 @@ const calFunctions = (method, x, y) =>
 {
     switch(method.toLowerCase())
     {
-        case 'Add':
+        case 'add':
             return {
                 action: '+', result: x + y};
 
-        case 'Subtract':
+        case 'subtract':
             return {
                 action: '-', result: x - y};
-        case 'Multiply':
+        case 'multiply':
             return {
                 action: '*', result: x * y};
-        case 'Divide':
+        case 'divide':
             return {
                 action: '/', result: x / y};
         default:
-            return 'Sorry I can only Add(+), Subtract(-), Multiply(*), or Divide(/). Please try again ;)';    
+            return 'Sorry I can only add(+), subtract(-), multiply(*), or divide(/). Please try again ;)';    
     }
 };
 
